@@ -4,6 +4,7 @@ import Header from "../Header/Header";
 import Main from "../Main/Main";
 import ModalWithForm from "../ModalWithForm/ModalWithForm";
 import ItemModal from "../ItemModal/ItemModal";
+import Footer from "../Footer/Footer";
 import { getWeather, filterWeatherData } from "../../utils/weatherApi";
 import { coordinats, APIkey } from "../../utils/constants";
 
@@ -100,6 +101,7 @@ function App() {
           card={selectedCard}
           closeActiveModal={closeActiveModal}
         />
+        <Footer></Footer>
       </div>
     </div>
   );
