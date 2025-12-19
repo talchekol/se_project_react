@@ -4,11 +4,11 @@ function ModalWithForm({
   children,
   buttonText,
   title,
-  activeModal,
+  isOpen,
   closeActiveModal,
 }) {
   return (
-    <div className={`modal ${activeModal ? "modal__opened" : ""}`}>
+    <div className={`modal ${isOpen ? "modal__opened" : ""}`}>
       <div className="modal__content">
         <h2 className="form__title">{title}</h2>
         <button

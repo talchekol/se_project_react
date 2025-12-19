@@ -24,7 +24,7 @@ function App() {
   const [clothingItems, setClothingItems] = useState(defaultClothingItems);
 
   const handleAddClick = () => {
-    setActiveModal("Add-clothes-form");
+    setActiveModal("add-garment");
   };
 
   const closeActiveModal = () => {
@@ -58,7 +58,7 @@ function App() {
         <ModalWithForm
           buttonText="Add garment"
           title="New garment"
-          activeModal={activeModal}
+          isOpen={activeModal === "add-garment"}
           closeActiveModal={closeActiveModal}
         >
           <label htmlFor="name" className="modal__label">
