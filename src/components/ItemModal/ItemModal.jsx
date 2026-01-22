@@ -1,7 +1,7 @@
 import "./ItemModal.css";
 import Closebutton from "../../assets/Modalclosebutton.svg";
 
-function ItemModal({ activeModal, closeActiveModal, card }) {
+function ItemModal({ activeModal, closeActiveModal, card, onOpenConfirm }) {
   return (
     <div
       className={`modal ${activeModal === "preview" ? "modal__opened" : ""}`}
@@ -14,9 +14,18 @@ function ItemModal({ activeModal, closeActiveModal, card }) {
         >
           <img src={Closebutton} alt="close button" />
         </button>
-        <img src={card.link} alt={card.name} className="modal__image" />
-        <div className="footer">
-          <h2 className="modal__caption">{card.name}</h2>
+        <img src={card.imageUrl} alt={card.name} className="modal__image" />
+        <div className="modal__footer">
+          <div className="modal__footer-row">
+            <h2 className="modal__caption">{card.name}</h2>
+            <button
+              onClick={onOpenConfirm}
+              type="button"
+              className="modal__delete-button"
+            >
+              Delete Item
+            </button>
+          </div>
           <p className="modal__weather"> Wearher: {card.weather}</p>
         </div>
       </div>
