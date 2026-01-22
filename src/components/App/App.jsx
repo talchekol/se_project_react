@@ -12,7 +12,7 @@ import Footer from "../Footer/Footer";
 import { getWeather, filterWeatherData } from "../../utils/weatherApi";
 import { coordinates, apiKey } from "../../utils/constants";
 import { addItem, getItems, removeItem } from "../../utils/api";
-import CurrentTemperatureUnitContext from "../contexts/CurrentTemperatureUnitContext";
+import CurrentTemperatureUnitContext from "../../../contexts/CurrentTemperatureUnitContext";
 
 function App() {
   //states
@@ -72,7 +72,7 @@ function App() {
     removeItem(selectedCard._id)
       .then(() => {
         setClothingItems((items) =>
-          items.filter((item) => item._id !== selectedCard._id)
+          items.filter((item) => item._id !== selectedCard._id),
         );
         closeActiveModal();
         setSelectedCard({});
