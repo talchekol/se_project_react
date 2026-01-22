@@ -12,7 +12,7 @@ import Footer from "../Footer/Footer";
 import { getWeather, filterWeatherData } from "../../utils/weatherApi";
 import { coordinates, apiKey } from "../../utils/constants";
 import { addItem, getItems, removeItem } from "../../utils/api";
-import CurrentTemperatureUnitContext from "../../contexts/CurrentTemperatureUnitContext.js";
+import CurrentTemperatureUnitContext from "../../contexts/CurrentTemperatureUnitContext";
 
 function App() {
   //states
