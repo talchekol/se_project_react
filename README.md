@@ -46,3 +46,10 @@ The project demonstrates core React concepts such as state management, props, co
 ### 1️⃣ Clone the repository
 -bash
 git clone https://github.com/talchekol/se_project_react.git
+
+## Project Pitch Video
+
+Check out [this video](https://drive.google.com/file/d/1c30cTKx6dISLXCoVq5JGdKDPC7EX9IGh/view?usp=vids_web), where I describe my
+project and some challenges I faced while building it.
+
+https://drive.google.com/file/d/1c30cTKx6dISLXCoVq5JGdKDPC7EX9IGh/view?usp=vids_web

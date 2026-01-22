@@ -15,8 +15,14 @@
   display: block;
 }
 
-.footer {
+.modal__footer {
   margin: 20px 0 32px 32px;
+}
+
+.modal__footer-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .modal__caption {
@@ -31,4 +37,11 @@
   font-family: "Cabinet Grotesk", sans-serif;
   font-weight: 700;
   font-size: 20px;
+}
+
+.modal__delete-button {
+  color: red;
+  margin-right: 32px;
+  border: none;
+  background: none;
 }
