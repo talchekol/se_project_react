@@ -53,3 +53,15 @@ Check out [this video](https://drive.google.com/file/d/1c30cTKx6dISLXCoVq5JGdKDP
 project and some challenges I faced while building it.
 
 https://drive.google.com/file/d/1c30cTKx6dISLXCoVq5JGdKDPC7EX9IGh/view?usp=vids_web
+
+## Mock API (json-server)
+
+This project uses a mock API powered by **json-server**.
+
+To start the mock server:
+
+1. Make sure `db.json` is located in the project root.
+2. Run the following command in a separate terminal:
+
+```bash
+json-server --watch db.json --id _id --port 3001

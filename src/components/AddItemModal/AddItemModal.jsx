@@ -2,11 +2,7 @@ import "./AddItemModal.css";
 import { useForm } from "../../hooks/useForm";
 import ModalWithForm from "../ModalWithForm/ModalWithForm";
 
-const AddItemModal = ({
-  isOpen,
-  onAddItem,
-  closeActiveModal = { closeActiveModal },
-}) => {
+const AddItemModal = ({ isOpen, onAddItem, closeActiveModal }) => {
   const defaultValues = {
     name: "",
     imageUrl: "",

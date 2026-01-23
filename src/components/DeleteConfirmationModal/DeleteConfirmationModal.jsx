@@ -1,5 +1,5 @@
 import "./DeleteConfirmationModal.css";
-import Closebutton from "../../assets/Modalclosebutton.svg";
+import CloseButton from "../../assets/Modalclosebutton.svg";
 
 function DeleteConfirmationModal({ isOpen, closeActiveModal, onConfirm }) {
   if (!isOpen) return null;
@@ -11,7 +11,7 @@ function DeleteConfirmationModal({ isOpen, closeActiveModal, onConfirm }) {
           type="button"
           className="modal__close"
         >
-          <img src={Closebutton} alt="close button" />
+          <img src={CloseButton} alt="close button" />
         </button>
 
         <p className="modal__confirm-text">

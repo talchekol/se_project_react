@@ -1,5 +1,5 @@
 import "./ItemModal.css";
-import Closebutton from "../../assets/Modalclosebutton.svg";
+import closeButton from "../../assets/Modalclosebutton.svg";
 
 function ItemModal({ activeModal, closeActiveModal, card, onOpenConfirm }) {
   return (
@@ -12,7 +12,7 @@ function ItemModal({ activeModal, closeActiveModal, card, onOpenConfirm }) {
           type="button"
           className="modal__close"
         >
-          <img src={Closebutton} alt="close button" />
+          <img src={closeButton} alt="close button" />
         </button>
         <img src={card.imageUrl} alt={card.name} className="modal__image" />
         <div className="modal__footer">
