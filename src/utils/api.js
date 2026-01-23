@@ -4,23 +4,23 @@ const headers = {
   "Content-Type": "application/json",
 };
 
-const handleServerRespone = (res) => {
+const handleServerResponse = (res) => {
   return res.ok ? res.json() : Promise.reject(`Error:${res.status}`);
 };
 
 export const getItems = () =>
-  fetch(`${baseUrl}/items`, { headers }).then(handleServerRespone);
+  fetch(`${baseUrl}/items`, { headers }).then(handleServerResponse);
 
 export const addItem = ({ name, imageUrl, weather }) => {
   return fetch(`${baseUrl}/items`, {
     method: "POST",
     headers: headers,
     body: JSON.stringify({ name, imageUrl, weather }),
-  }).then(handleServerRespone);
+  }).then(handleServerResponse);
 };
 
 export const removeItem = (id) => {
   return fetch(`${baseUrl}/items/${id}`, {
     method: "DELETE",
-  }).then(handleServerRespone);
+  }).then(handleServerResponse);
 };
