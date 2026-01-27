@@ -56,9 +56,7 @@ function App() {
       imageUrl: inputValues.imageUrl,
       weather: inputValues.weatherType,
     };
-    // setClothingItems([...clothingItems, newCardData]);
-    // closeActiveModal();
-
+    
     addItem(newCardData)
       .then((data) => {
         setClothingItems([data, ...clothingItems]);
