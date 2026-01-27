@@ -12,7 +12,7 @@ import Footer from "../Footer/Footer";
 import { getWeather, filterWeatherData } from "../../utils/weatherApi";
 import { coordinates, apiKey } from "../../utils/constants";
 import { addItem, getItems, removeItem } from "../../utils/api";
-import CurrentTemperatureUnitContext from "../../contexts/CurrentTemperatureUnitContext";
+import CurrentTemperatureUnitContext from "../../contexts/CurrentTemperatureUnitContext.js";
 
 function App() {
   //states
@@ -126,10 +126,7 @@ function App() {
           </Routes>
 
           <Footer />
-          <ModalWithForm></ModalWithForm>
           <AddItemModal
-            buttonText="Save"
-            title="New garment"
             isOpen={activeModal === "add-garment"}
             closeActiveModal={closeActiveModal}
             onAddItem={onAddItem}
