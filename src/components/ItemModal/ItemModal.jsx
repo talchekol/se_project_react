@@ -26,7 +26,7 @@ function ItemModal({ activeModal, closeActiveModal, card, onOpenConfirm }) {
               Delete Item
             </button>
           </div>
-          <p className="modal__weather"> Wearher: {card.weather}</p>
+          <p className="modal__weather"> Weather: {card.weather}</p>
         </div>
       </div>
     </div>

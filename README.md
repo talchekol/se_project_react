@@ -52,8 +52,6 @@ git clone https://github.com/talchekol/se_project_react.git
 Check out [this video](https://drive.google.com/file/d/1c30cTKx6dISLXCoVq5JGdKDPC7EX9IGh/view?usp=vids_web), where I describe my
 project and some challenges I faced while building it.
 
-https://drive.google.com/file/d/1c30cTKx6dISLXCoVq5JGdKDPC7EX9IGh/view?usp=vids_web
-
 ## Mock API (json-server)
 
 This project uses a mock API powered by **json-server**.
