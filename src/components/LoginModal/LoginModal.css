@@ -1,0 +1,29 @@
+/* .modal__label {
+  display: flex;
+  flex-direction: column;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.modal__input {
+  margin-top: 8px;
+  font-size: 14px;
+  font-weight: 400;
+}
+
+.modal__submit:disabled {
+  background-color: #00000080;
+} */
+
+/* .modal__secondary-button {
+  background: none;
+  border: none;
+  color: #00000080;
+  font-size: 16px;
+} */
+
+.modal__error-message {
+  color: red;
+  font-size: 14px;
+  margin-top: 8px;
+}

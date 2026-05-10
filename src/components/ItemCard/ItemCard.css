@@ -23,3 +23,16 @@
   width: 100%;
   border-radius: 30px;
 }
+
+.card__like-btn {
+  border: 0;
+  background: 0;
+  position: absolute;
+  cursor: pointer;
+  right: 77px;
+  top: 19px;
+}
+
+.card__like-btn_active {
+  background: url("../../assets/Likebutton-active.svg") no-repeat center;
+}
