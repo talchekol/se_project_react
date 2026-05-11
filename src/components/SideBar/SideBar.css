@@ -9,6 +9,7 @@
 .sideBar__avatar {
   width: 56px;
   height: 56px;
+  border-radius: 50%;
 }
 
 .sideBar__username {
@@ -19,4 +20,23 @@
   font-weight: 700;
   margin-left: 16px;
   white-space: nowrap;
+}
+
+.edit__profile-button {
+  white-space: nowrap;
+  font-family: "Cabinet Grotesk", sans-serif;
+  border: none;
+  font-weight: 700;
+  margin-top: 24px;
+  cursor: pointer;
+}
+
+.logout-button {
+  display: flex;
+  white-space: nowrap;
+  font-family: "Cabinet Grotesk", sans-serif;
+  border: none;
+  font-weight: 700;
+  margin-top: 24px;
+  cursor: pointer;
 }

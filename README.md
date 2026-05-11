@@ -45,8 +45,8 @@ The project demonstrates core React concepts such as state management, props, co
 
 ### 1️⃣ Clone the repository
 -bash
-git clone https://github.com/talchekol/se_project_react.git
-
+frontend repo https://github.com/talchekol/se_project_react.git
+backend repo https://github.com/talchekol/se_project_express
 ## Project Pitch Video
 
 Check out [this video](https://drive.google.com/file/d/1c30cTKx6dISLXCoVq5JGdKDPC7EX9IGh/view?usp=vids_web), where I describe my
@@ -63,3 +63,5 @@ To start the mock server:
 
 ```bash
 json-server --watch db.json --id _id --port 3001
+
+
