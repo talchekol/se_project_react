@@ -1,8 +1,6 @@
-export const baseUrl = "http://localhost:3001";
+import { handleServerResponse } from "./api";
 
-export function checkResponse(res) {
-  return res.ok ? res.json() : Promise.reject(`Error: ${res.status}`);
-}
+export const baseUrl = "http://localhost:3001";
 
 export function signup({ name, avatar, email, password }) {
   return fetch(`${baseUrl}/signup`, {
@@ -11,7 +9,7 @@ export function signup({ name, avatar, email, password }) {
       "Content-Type": "application/json",
     },
     body: JSON.stringify({ name, avatar, email, password }),
-  }).then(checkResponse);
+  }).then(handleServerResponse);
 }
 
 export function signin({ email, password }) {
@@ -21,7 +19,7 @@ export function signin({ email, password }) {
       "Content-Type": "application/json",
     },
     body: JSON.stringify({ email, password }),
-  }).then(checkResponse);
+  }).then(handleServerResponse);
 }
 
 export const checkToken = (token) => {
@@ -31,10 +29,5 @@ export const checkToken = (token) => {
       "Content-Type": "application/json",
       Authorization: `Bearer ${token}`,
     },
-  }).then((res) => {
-    if (res.ok) {
-      return res.json();
-    }
-    return Promise.reject(`Error: ${res.status}`);
-  });
+  }).then(handleServerResponse);
 };

@@ -10,8 +10,17 @@ function ModalWithForm({
   secondaryButtonText,
   onSecondaryButtonClick,
 }) {
+  const handleOverlayClick = (e) => {
+    if (e.target === e.currentTarget) {
+      closeActiveModal();
+    }
+  };
+
   return (
-    <div className={`modal ${isOpen ? "modal__opened" : ""}`}>
+    <div
+      className={`modal ${isOpen ? "modal__opened" : ""}`}
+      onClick={handleOverlayClick}
+    >
       <div className="modal__content">
         <h2 className="form__title">{title}</h2>
         <button

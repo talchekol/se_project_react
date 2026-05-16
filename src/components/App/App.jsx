@@ -40,6 +40,7 @@ function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [currentUser, setCurrentUser] = useState(null);
   const [errorMessage, setErrorMessage] = useState("");
+  const [isLoading, setIsLoading] = useState(false);
 
   //handelrs
   const handleToggleSwitchChange = () => {
@@ -75,6 +76,7 @@ function App() {
   };
 
   const onAddItem = (inputValues, resetForm) => {
+    setIsLoading(true);
     const token = localStorage.getItem("jwt");
 
     const newCardData = {
@@ -88,10 +90,12 @@ function App() {
         resetForm();
         closeActiveModal();
       })
-      .catch(console.error);
+      .catch(console.error)
+      .finally(() => setIsLoading(false));
   };
 
   const handleRegistration = ({ name, avatar, email, password }, resetForm) => {
+    setIsLoading(true);
     return auth
       .signup({ name, avatar, email, password })
       .then(() => {
@@ -100,7 +104,8 @@ function App() {
         navigate("/profile");
         return handleLogin({ email, password });
       })
-      .catch((err) => console.error(err));
+      .catch((err) => console.error(err))
+      .finally(() => setIsLoading(false));
   };
 
   const handleLogin = ({ email, password }, resetForm) => {
@@ -108,6 +113,9 @@ function App() {
       return;
     }
     setErrorMessage("");
+
+    setIsLoading(true);
+
     auth
       .signin({ email, password })
       .then((res) => {
@@ -132,6 +140,9 @@ function App() {
       .catch((err) => {
         console.error("Login error:", err);
         setErrorMessage("Incorrect email or password");
+      })
+      .finally(() => {
+        setIsLoading(false);
       });
   };
 
@@ -155,31 +166,9 @@ function App() {
       .catch(console.error);
   };
 
-  function handleAddItem(item) {
-    const token = localStorage.getItem("jwt");
-
-    return api
-      .addItem(item, token)
-      .then((newItem) => {
-        setClothingItems((prev) => [newItem, ...prev]);
-        closeActiveModal();
-      })
-      .catch(console.error);
-  }
-
-  function handleDeleteItem(id) {
-    const token = localStorage.getItem("jwt");
-
-    return api
-      .deleteItem(id, token)
-      .then(() => {
-        setClothingItems((prev) => prev.filter((item) => item._id !== id));
-      })
-      .catch(console.error);
-  }
-
   const handleEditProfile = (data) => {
     const token = localStorage.getItem("jwt");
+    setIsLoading(true);
 
     api
       .editProfile(data, token)
@@ -187,7 +176,8 @@ function App() {
         setCurrentUser(updatedUser);
         closeActiveModal();
       })
-      .catch((err) => console.error("Error updating profile:", err));
+      .catch((err) => console.error("Error updating profile:", err))
+      .finally(() => setIsLoading(false));
   };
 
   const handleCardLike = ({ _id, likes }) => {
@@ -205,6 +195,19 @@ function App() {
       })
       .catch((err) => console.error("Error with like logic:", err));
   };
+
+  useEffect(() => {
+    if (!activeModal) return;
+    const handleEscClose = (e) => {
+      if (e.key === "Escape") {
+        closeActiveModal();
+      }
+    };
+    document.addEventListener("keydown", handleEscClose);
+    return () => {
+      document.removeEventListener("keydown", handleEscClose);
+    };
+  }, [activeModal]);
 
   useEffect(() => {
     getWeather(coordinates, apiKey)
@@ -283,6 +286,7 @@ function App() {
               isOpen={activeModal === "add-garment"}
               closeActiveModal={closeActiveModal}
               onAddItem={onAddItem}
+              isLoading={isLoading}
             ></AddItemModal>
             <ItemModal
               activeModal={activeModal}
@@ -299,17 +303,22 @@ function App() {
               isOpen={activeModal === "Signup"}
               onRegister={handleRegistration}
               closeActiveModal={closeActiveModal}
+              onSecondaryButtonClick={handleModalLoginClick}
+              isLoading={isLoading}
             />
             <LoginModal
               isOpen={activeModal === "Login"}
               closeActiveModal={closeActiveModal}
               onLogin={handleLogin}
               errorMessage={errorMessage}
+              onSecondaryButtonClick={handleModalRegisterClick}
+              isLoading={isLoading}
             />
             <EditProfileModal
               isOpen={activeModal === "Edit-Profile"}
               onEditProfile={handleEditProfile}
               closeActiveModal={closeActiveModal}
+              isLoading={isLoading}
             />
           </div>
         </div>

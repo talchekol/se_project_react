@@ -8,6 +8,8 @@ const LoginModal = ({
   closeActiveModal,
   onRegisterClick,
   errorMessage,
+  onSecondaryButtonClick,
+  isLoading,
 }) => {
   const defaultValues = {
     email: "",
@@ -27,9 +29,9 @@ const LoginModal = ({
       isOpen={isOpen}
       closeActiveModal={closeActiveModal}
       onSubmit={handleSubmit}
-      buttonText="Log in"
-      secondaryButtonText="or Register"
-      onSecondaryButtonClick={onRegisterClick}
+      buttonText={isLoading ? "Logging in..." : "Login"}
+      secondaryButtonText="or Sign Up"
+      onSecondaryButtonClick={onSecondaryButtonClick}
     >
       <label htmlFor="login-email" className="modal__label">
         Email
