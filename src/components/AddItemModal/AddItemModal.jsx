@@ -2,7 +2,7 @@ import "./AddItemModal.css";
 import { useForm } from "../../hooks/useForm";
 import ModalWithForm from "../ModalWithForm/ModalWithForm";
 
-const AddItemModal = ({ isOpen, onAddItem, closeActiveModal }) => {
+const AddItemModal = ({ isOpen, onAddItem, closeActiveModal, isLoading }) => {
   const defaultValues = {
     name: "",
     imageUrl: "",
@@ -23,7 +23,7 @@ const AddItemModal = ({ isOpen, onAddItem, closeActiveModal }) => {
       onSubmit={handleSubmit}
       isOpen={isOpen}
       closeActiveModal={closeActiveModal}
-      buttonText="Save"
+      buttonText={isLoading ? "Saving..." : "Save"}
     >
       <label htmlFor="name" className="modal__label">
         Name{""}
@@ -78,7 +78,7 @@ const AddItemModal = ({ isOpen, onAddItem, closeActiveModal }) => {
             className="modal__radio-input"
             name="weatherType"
             value="warm"
-            checked={values.weatherType === "'warm"}
+            checked={values.weatherType === "warm"}
             onChange={handleChange}
           />
           Warm

@@ -4,7 +4,12 @@ import { CurrentUserContext } from "../../contexts/CurrentUserContext";
 import { useForm } from "../../hooks/useForm";
 import "./EditProfileModal.css";
 
-const EditProfileModal = ({ isOpen, onEditProfile, closeActiveModal }) => {
+const EditProfileModal = ({
+  isOpen,
+  onEditProfile,
+  closeActiveModal,
+  isLoading,
+}) => {
   const currentUser = useContext(CurrentUserContext);
 
   const { values, handleChange, setValues } = useForm({
@@ -29,7 +34,7 @@ const EditProfileModal = ({ isOpen, onEditProfile, closeActiveModal }) => {
   return (
     <ModalWithForm
       title="change profile data"
-      buttonText="Save changes"
+      buttonText={isLoading ? "Saving..." : "Save"}
       isOpen={isOpen}
       closeActiveModal={closeActiveModal}
       onSubmit={handleSubmit}
