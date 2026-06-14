@@ -3,6 +3,7 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
+  "homepage": "http://wtwr-tc.jumpingcrab.com",
   "scripts": {
     "dev": "concurrently \"vite --open\" \"json-server --watch db.json --id _id --port 3001\"",
     "dev:vite": "vite --open",
@@ -11,7 +12,7 @@
     "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d dist"
+    "deploy": "npm run build && scp -r ./dist/* tal000018@wtwr-tc.jumpingcrab.com:/home/tal000018/frontend"
   },
   "dependencies": {
     "react": "^18.3.1",
