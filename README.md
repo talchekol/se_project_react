@@ -1,67 +1,41 @@
-# React + Vite
+# WTWR (What to Wear?): Front End
 
-# WTWR — What To Wear Right 👕🌦️
+This is the front-end repository for the WTWR (What to Wear) application. It is a responsive, single-page React application that interacts with a custom weather API and a secure cloud-deployed Express backend to suggest clothing combinations based on real-time weather conditions.
 
-WTWR (What To Wear Right) is a React web application that displays current weather information and suggests clothing items based on the temperature.  
-The app dynamically updates its UI according to day/night conditions and allows users to preview and add clothing items using modals.
+## Features & Functionality
 
----
+- **Weather-Driven Recommendations:** Automatically fetches real-time weather details and filters clothing items into cards suitable for the current temperature (Hot, Warm, or Cold).
+- **User Authentication (UX/UI):** Fully integrated Sign-In and Sign-Up modals allowing users to register, log in, and maintain persistent sessions via local JWT storage.
+- **Personalized Closet:** Authenticated users can add new clothing items with custom image links, view their profile, and like/dislike specific clothing items.
+- **Responsive Layout:** Adaptive design built following strict grid and flexbox standards, looking polished across mobile, tablet, and desktop viewports.
+- **Production Routing:** Powered by `react-router-dom` to split views seamlessly between the main dashboard and the user profile page.
 
-## 📖 Project Description
+## Tech Stack
 
-WTWR fetches live weather data from the OpenWeather API and categorizes the weather into three types: **hot**, **warm**, and **cold**.  
-Based on this classification, the app displays relevant clothing items that match the current weather.
-
-The project demonstrates core React concepts such as state management, props, conditional rendering, and working with external APIs.
-
----
-
-## ✨ Features
-
-- Fetches real-time weather data on application load
-- Displays current city, temperature, and weather condition
-- Day/Night background based on sunrise and sunset times
-- Clothing recommendations filtered by weather type (hot / warm / cold)
-- Item preview modal
-- Add garment modal with form validation
-- Accessible form inputs and semantic HTML structure
-- Clean and modular component architecture
+- **Framework:** React.js (Create React App / Vite)
+- **Routing:** React Router DOM
+- **API Fetching:** Native JavaScript Fetch API
+- **Styling & Icons:** Plain CSS / Context Modules
+- **Bundling & Production Build:** Static Optimization Deployment
 
 ---
 
-## 🧰 Technologies Used
+## Deployment & Links
 
-- **React** (with Hooks)
-- **Vite** (development environment & bundler)
-- **JavaScript (ES6+)**
-- **CSS** (BEM methodology)
-- **OpenWeather API**
-- **Normalize.css**
-- Custom fonts via `@font-face`
+- **Frontend Live URL:** [https://wtwr-tc.jumpingcrab.com](https://wtwr-tc.jumpingcrab.com)
+- **Backend API Live URL:** [https://api-wtwr-tc.jumpingcrab.com](https://api-wtwr-tc.jumpingcrab.com)
+- **Backend GitHub Repository:** [https://github.com/talchekol/se_project_express](https://github.com/talchekol/se_project_express)
 
----
-
-## 🚀 Getting Started
-
-### 1️⃣ Clone the repository
--bash
-frontend repo https://github.com/talchekol/se_project_react.git
-backend repo https://github.com/talchekol/se_project_express
 ## Project Pitch Video
 
-Check out [this video](https://drive.google.com/file/d/1c30cTKx6dISLXCoVq5JGdKDPC7EX9IGh/view?usp=vids_web), where I describe my
-project and some challenges I faced while building it.
+Watch the complete walkthrough and system breakdown here:
+[TalChekol-ProjectPitch-WTWR](https://drive.google.com/file/d/1AeiE1k2y4H3S1eVnYPf-gzZbpzQcwKcf/view?usp=sharing)
 
-## Mock API (json-server)
+---
 
-This project uses a mock API powered by **json-server**.
+## How to Run Locally
 
-To start the mock server:
-
-1. Make sure `db.json` is located in the project root.
-2. Run the following command in a separate terminal:
-
-```bash
-json-server --watch db.json --id _id --port 3001
-
+1. Clone this repository:
+   ```bash
+   git clone [https://github.com/talchekol/se_project_react.git](https://github.com/talchekol/se_project_react.git)
 
