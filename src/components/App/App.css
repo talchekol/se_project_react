@@ -1,5 +1,6 @@
 .app {
   background: #f3f3f3;
+   min-height: 100%;
 }
 
 .app__content {
